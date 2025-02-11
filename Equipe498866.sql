@@ -327,7 +327,6 @@ IF NEW.tipo_transacao IN ('depósito', 'estorno') THEN
     END IF;
 END$$
 
-
 DELIMITER ;
 
 SET SQL_MODE=@OLD_SQL_MODE;
