@@ -159,7 +159,7 @@ END$$
 DELIMITER ;
 
 -- Consultas 
-
+USE `Equipe498866`;
 -- 1.1 Funcionários de uma agência ordenados por nome 
 SELECT f.nome_comp, f.cargo, f.endereço, f.cidade, f.salario, 
        (SELECT COUNT(*) FROM dependente d WHERE d.matricula = f.matricula) AS num_dependentes
@@ -433,6 +433,6 @@ BEGIN
 END$$
 
 -- teste (conta origem, conta destino, valor)
-CALL realizar_transferencia(5, 2, 200.00);
+-- CALL realizar_transferencia(5, 2, 200.00);
 
 

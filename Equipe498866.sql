@@ -67,10 +67,10 @@ ENGINE = InnoDB;
 -- Table `conta`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `conta` ;
--- atualiza o tipo do atributo saldo para ficar melhor de utilizar 
+
 CREATE TABLE IF NOT EXISTS `conta` (
   `num_conta` INT NOT NULL AUTO_INCREMENT,
-  `saldo` DECIMAL(15,2) UNSIGNED NOT NULL DEFAULT 0,
+  `saldo` REAL UNSIGNED NOT NULL DEFAULT 0,
   `senha` VARCHAR(100) NOT NULL,
   `tipo_conta` ENUM('Corrente', 'Poupança', 'Especial') NOT NULL,
   `juros` DECIMAL(5,2) NULL,
