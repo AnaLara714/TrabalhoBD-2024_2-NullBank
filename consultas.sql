@@ -68,10 +68,9 @@ DROP TRIGGER IF EXISTS `funcionario_BEFORE_INSERT` $$
 USE `Equipe498866`$$
 CREATE DEFINER = CURRENT_USER TRIGGER `Equipe498866`.`funcionario_BEFORE_INSERT` BEFORE INSERT ON `funcionario` FOR EACH ROW
 BEGIN
-<<<<<<< HEAD
-=======
+
 -- Não permite que o salário do funcionario seja menor que R$2.286,00
->>>>>>> cb06de8be6f3d70be32e4abc01792f4843be4815
+
 IF NEW.salario < 2286.00 THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'O salário não pode ser menor que R$2.286,00.';
@@ -85,10 +84,9 @@ USE `Equipe498866`$$
 CREATE DEFINER = CURRENT_USER TRIGGER `Equipe498866`.`funcionario_AFTER_INSERT` AFTER INSERT ON `funcionario` FOR EACH ROW
 BEGIN
 UPDATE agencia 
-<<<<<<< HEAD
-=======
+
 -- Atualiza o salário do funcinário do funcionário quando receber um aumento
->>>>>>> cb06de8be6f3d70be32e4abc01792f4843be4815
+
 SET sal_total = sal_total + NEW.salario
 WHERE num_ag = NEW.num_ag;
 END;$$
@@ -99,10 +97,9 @@ DROP TRIGGER IF EXISTS `funcionario_BEFORE_UPDATE` $$
 USE `Equipe498866`$$
 CREATE DEFINER = CURRENT_USER TRIGGER `Equipe498866`.`funcionario_BEFORE_UPDATE` BEFORE UPDATE ON `funcionario` FOR EACH ROW
 BEGIN
-<<<<<<< HEAD
-=======
+
 -- Após a atualização do aumento do salário, e não permite o salário ser menor que R$2.286,00 
->>>>>>> cb06de8be6f3d70be32e4abc01792f4843be4815
+
 IF NEW.salario < 2286.00 THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'O salário não pode ser menor que R$2.286,00.';
@@ -115,10 +112,9 @@ DROP TRIGGER IF EXISTS `funcionario_AFTER_UPDATE` $$
 USE `Equipe498866`$$
 CREATE DEFINER = CURRENT_USER TRIGGER `Equipe498866`.`funcionario_AFTER_UPDATE` AFTER UPDATE ON `funcionario` FOR EACH ROW
 BEGIN
-<<<<<<< HEAD
-=======
+
 -- Atualiza o valor do salário total da agência após atualizar o salário do funcinário
->>>>>>> cb06de8be6f3d70be32e4abc01792f4843be4815
+
 IF OLD.salario <> NEW.salario THEN
         UPDATE agencia
         SET sal_total = sal_total - OLD.salario + NEW.salario
@@ -132,10 +128,9 @@ DROP TRIGGER IF EXISTS `funcionario_BEFORE_DELETE` $$
 USE `Equipe498866`$$
 CREATE DEFINER = CURRENT_USER TRIGGER `Equipe498866`.`funcionario_BEFORE_DELETE` BEFORE DELETE ON `funcionario` FOR EACH ROW
 BEGIN
-<<<<<<< HEAD
-=======
+
 -- Atualiza o valor do salário total da agência após deletar o salário do funcinário
->>>>>>> cb06de8be6f3d70be32e4abc01792f4843be4815
+
 UPDATE agencia
     SET sal_total = sal_total - OLD.salario
     WHERE num_ag = OLD.num_ag;
@@ -146,10 +141,9 @@ USE `Equipe498866`$$
 DROP TRIGGER IF EXISTS `transacao_BEFORE_INSERT` $$
 USE `Equipe498866`$$
 CREATE DEFINER = CURRENT_USER TRIGGER `Equipe498866`.`transacao_BEFORE_INSERT` BEFORE INSERT ON `transacao` FOR EACH ROW
-<<<<<<< HEAD
-=======
+
 -- Insere no atributo data_hora a data e hora que foi feita a transação
->>>>>>> cb06de8be6f3d70be32e4abc01792f4843be4815
+
 BEGIN
 SET NEW.data_hora = NOW();
 END;$$
@@ -160,10 +154,9 @@ DROP TRIGGER IF EXISTS `transacao_AFTER_INSERT` $$
 USE `Equipe498866`$$
 CREATE DEFINER = CURRENT_USER TRIGGER `Equipe498866`.`transacao_AFTER_INSERT` AFTER INSERT ON `transacao` FOR EACH ROW
 BEGIN
-<<<<<<< HEAD
-=======
+
 -- Verifica e atualiza o valor do saldo quando houver trnsação e de acordo com o tipo dela
->>>>>>> cb06de8be6f3d70be32e4abc01792f4843be4815
+
 IF NEW.tipo_transacao IN ('Depósito', 'Estorno', 'Pagamento') THEN
         UPDATE conta SET saldo = saldo + NEW.valor WHERE num_conta = NEW.conta_num_conta;
     ELSEIF NEW.tipo_transacao IN ('Saque', 'Transferência', 'PIX') THEN
@@ -180,16 +173,13 @@ END$$
 DELIMITER ;
 
 -- Consultas 
-<<<<<<< HEAD
 
-=======
 USE `Equipe498866`;
->>>>>>> cb06de8be6f3d70be32e4abc01792f4843be4815
--- 1.1 Funcionários de uma agência ordenados por nome 
-SELECT f.nome_comp, f.cargo, f.endereço, f.cidade, f.salario, 
-       (SELECT COUNT(*) FROM dependente d WHERE d.matricula = f.matricula) AS num_dependentes
-FROM funcionario f, agencia a
-WHERE f.num_ag = a.num_ag
+
+-- 1.1 Funcionários de uma agência ordenados por nome (ex agencia 1)
+SELECT f.nome_comp, f.cargo, f.endereço, f.cidade, f.salario
+FROM funcionario f
+WHERE f.num_ag = 1
 ORDER BY f.nome_comp;
 
 -- 1.2 Clientes da agência, classificados por tipo de conta (ex conta corrente)
@@ -273,7 +263,7 @@ FROM conta c
 JOIN agencia a ON c.agencia_num_ag = a.num_ag
 JOIN funcionario f ON c.gerente_matricula = f.matricula
 JOIN cliente_has_conta chc ON c.num_conta = chc.conta_num_conta
-WHERE chc.cliente_cpf = 'numero cpf';
+WHERE chc.cliente_cpf = 12345678901;
 
 -- 2.2 Quais os nomes dos clientes e seus CPFs com os quais aquele cliente possui contas conjuntas;
 
@@ -343,7 +333,7 @@ FROM
 JOIN 
     endereco e ON c.cpf = e.cliente_cpf
 WHERE 
-    e.cidade = 'Nome Cidade'
+    e.cidade = 'São Paulo'
 ORDER BY 
     idade;
 
@@ -374,12 +364,8 @@ WHERE a.cidade = 'Nome da Cidade'
 GROUP BY a.num_ag
 ORDER BY salario_montante_total DESC;
 
-<<<<<<< HEAD
--- views
-=======
 -- Views
 
->>>>>>> cb06de8be6f3d70be32e4abc01792f4843be4815
 -- 4 Criar uma visão para listar os dados das contas de um gerente, com seus tipos, saldos e clientes;
 CREATE OR REPLACE VIEW contas_gerente AS
 SELECT 
@@ -394,8 +380,8 @@ JOIN cliente_has_conta chc ON c.num_conta = chc.conta_num_conta
 JOIN cliente cl ON chc.cliente_cpf = cl.cpf
 JOIN funcionario f ON c.gerente_matricula = f.matricula;
 
--- para visualizar a visão
-SELECT * FROM contas_gerente WHERE nome_gerente = 'Nome do Gerente';
+-- para visualizar a view
+SELECT * FROM contas_gerente WHERE nome_gerente = 'Camilly';
 
 -- 5 Criar uma visão para listar, para cada conta, todos os dados das movimentações das mesmas 
 -- (estilo extrato, podem ser na última semana (últimos 7 dias), no último mês (últimos 30 dias) e no 
@@ -462,10 +448,9 @@ BEGIN
 END$$
 
 -- teste (conta origem, conta destino, valor)
-<<<<<<< HEAD
+
 CALL realizar_transferencia(5, 2, 200.00);
-=======
--- CALL realizar_transferencia(5, 2, 200.00);
->>>>>>> cb06de8be6f3d70be32e4abc01792f4843be4815
+
+
 
 

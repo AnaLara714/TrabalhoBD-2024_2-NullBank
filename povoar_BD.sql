@@ -5,18 +5,8 @@ INSERT INTO `agencia`(`nome_ag`, `cidade`, `sal_total`) VALUES
 					 ('Agência Paulista', 'São Paulo', 0),
                      ('Agência Sul', 'Porto Alegre', 0),
                      ('Agência Norte', 'Fortaleza', 0),
-                     ('Agência Leste', 'Recife', 0),
-					 ('Agência Oeste', 'Curitiba', 0),
-					 ('Agência da Lagoa', 'Rio de Janeiro', 0),
-                     ('Agência Municipal', 'Salvador', 0),
-                     ('Agência Comercial', 'Goiânia', 0),
-                     ('Agência VIP', 'Florianópolis', 0),
-                     ('Agência Ouro', 'Belo Horizonte', 0),
-                     ('Agência Prata', 'São Paulo', 0),
-                     ('Agência Bronze', 'Porto Alegre', 0),
-                     ('Agência Diamante', 'Rio de Janeiro', 0),
-                     ('Agência Esmeralda', 'Curitiba', 0);
-                     
+                     ('Agência Leste', 'Recife', 0);
+					                      
 INSERT INTO `cliente`(`cpf`, `nome_comp`, `rg`, `orgao_emissor`, `uf`, `data_nasc`) VALUES 
 					 ('12345678901', 'João Silva', 'MG123456', 'SSP', 'MG', '1985-06-15'),
 					 ('98765432100', 'Maria Oliveira', 'SP987654', 'SSP', 'SP', '1990-09-25'),
@@ -32,23 +22,23 @@ INSERT INTO `cliente`(`cpf`, `nome_comp`, `rg`, `orgao_emissor`, `uf`, `data_nas
                      ('88990011223', 'Patrícia Mendes', 'CE889900', 'SSP', 'CE', '1991-04-17');
 
 INSERT INTO `funcionario`(`num_ag`, `nome_comp`, `senha`, `endereço`, `cidade`, `cargo`, `genero`, `data_nasc`, `salario`) VALUES 
-						 (1, 'Carlos Almeida', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua A, 100', 'Belo Horizonte', 'Gerente', 'Masculino', '1975-04-20', 8000.00),
-						 (2, 'Ana Souza', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua B, 200', 'São Paulo', 'Caixa', 'Feminino', '1988-07-10', 3000.00),
-                         (3, 'Carlos Almeida', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua A, 100', 'Belo Horizonte', 'Gerente', 'Masculino', '1975-04-20', 8000.00),
-                         (4, 'Ana Souza', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua B, 200', 'São Paulo', 'Caixa', 'Feminino', '1988-07-10', 3000.00),
-                         (5, 'Marcos Pinto', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Av. Central, 50', 'Curitiba', 'Atendente', 'Masculino', '1982-02-15', 2500.00),
-                         (6, 'Juliana Castro', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua das Orquídeas, 80', 'Florianópolis', 'Gerente', 'Feminino', '1979-11-30', 8500.00),
-                         (7, 'Roberto Lima', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Av. Brasil, 150', 'Rio de Janeiro', 'Caixa', 'Não-binário', '1990-05-05', 3200.00),
-                         (8, 'Fernanda Ribeiro', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua Sol, 300', 'Recife', 'Atendente', 'Feminino', '1985-08-20', 2800.00),
-                         (9, 'Eduardo Silva', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua das Acácias, 120', 'Porto Alegre', 'Caixa', 'Masculino', '1987-03-18', 3100.00),
-                         (10, 'Patrícia Gomes', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Av. Atlântica, 220', 'Rio de Janeiro', 'Gerente', 'Não-binário', '1978-07-25', 9000.00),
-                         (11, 'Bruno Moreira', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua Verde, 75', 'Belo Horizonte', 'Atendente', 'Masculino', '1992-12-10', 2700.00),
-                         (12, 'Larissa Dias', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Av. dos Coqueiros, 110', 'Fortaleza', 'Caixa', 'Feminino', '1991-06-05', 3300.00),
-                         (13, 'Ricardo Fernandes', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua das Rosas, 130', 'São Paulo', 'Atendente', 'Masculino', '1986-09-15', 2900.00),
-                         (14, 'Sofia Martins', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Av. Paulista, 200', 'São Paulo', 'Gerente', 'Feminino', '1980-04-28', 9500.00),
-                         (15, 'Leonardo Costa', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua dos Pinheiros, 95', 'Curitiba', 'Caixa', 'Não-binário', '1993-11-02', 3100.00),
-                         (16, 'Isabela Rocha', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Av. das Américas, 300', 'Florianópolis', 'Atendente', 'Não-binário', '1989-02-17', 2600.00),
-                         (17, 'Gustavo Nunes', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua do Comércio, 210', 'Recife', 'Caixa', 'Masculino', '1984-07-07', 3400.00);                     
+						 (1, 'Ana Lara', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua A, 100', 'Belo Horizonte', 'Gerente', 'Masculino', '1975-04-20', 8000.00),
+						 (2, 'Camilly', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua B, 200', 'São Paulo', 'Gerente', 'Feminino', '1988-07-10', 8000.00),
+                         (3, 'Maria Rita', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua A, 100', 'Belo Horizonte', 'Gerente', 'Masculino', '1975-04-20', 8000.00),
+                         (4, 'Deyvid', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua B, 200', 'São Paulo', 'Gerente', 'Feminino', '1988-07-10', 8000.00),
+                         (5, 'Jander Oliveira', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Av. Central, 50', 'Curitiba', 'Gerente', 'Masculino', '1982-02-15', 8000.00),
+                         (1, 'Juliana Castro', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua das Orquídeas, 80', 'Florianópolis', 'Atendente', 'Feminino', '1979-11-30', 2800.00),
+                         (2, 'Roberto Lima', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Av. Brasil, 150', 'Rio de Janeiro', 'Caixa', 'Não-binário', '1990-05-05', 3200.00),
+                         (3, 'Fernanda Ribeiro', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua Sol, 300', 'Recife', 'Atendente', 'Feminino', '1985-08-20', 2800.00),
+                         (4, 'Eduardo Silva', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua das Acácias, 120', 'Porto Alegre', 'Caixa', 'Masculino', '1987-03-18', 3100.00),
+                         (5, 'Patrícia Gomes', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Av. Atlântica, 220', 'Rio de Janeiro', 'Atendente', 'Não-binário', '1978-07-25', 2700.00),
+                         (1, 'Bruno Moreira', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua Verde, 75', 'Belo Horizonte', 'Atendente', 'Masculino', '1992-12-10', 2700.00),
+                         (2, 'Larissa Dias', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Av. dos Coqueiros, 110', 'Fortaleza', 'Caixa', 'Feminino', '1991-06-05', 3300.00),
+                         (3, 'Ricardo Fernandes', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua das Rosas, 130', 'São Paulo', 'Atendente', 'Masculino', '1986-09-15', 2900.00),
+                         (4, 'Sofia Martins', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Av. Paulista, 200', 'São Paulo', 'Atendente', 'Feminino', '1980-04-28', 2900.00),
+                         (5, 'Leonardo Costa', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua dos Pinheiros, 95', 'Curitiba', 'Caixa', 'Não-binário', '1993-11-02', 3100.00),
+                         (1, 'Isabela Rocha', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Av. das Américas, 300', 'Florianópolis', 'Atendente', 'Não-binário', '1989-02-17', 2600.00),
+                         (2, 'Gustavo Nunes', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua do Comércio, 210', 'Recife', 'Caixa', 'Masculino', '1984-07-07', 3200.00);                     
 -- altera  uns tipos do atributo do tipo da conta para o tipo especial
 INSERT INTO `conta`(`saldo`, `senha`, `tipo_conta`, `juros`, `limite_credito`, `data_aniversario`, `gerente_matricula`, `agencia_num_ag`) VALUES 
 				   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Corrente', 2.5, 1000.00, '2025-02-10', 1, 1),
@@ -142,11 +132,11 @@ INSERT INTO `dependente`(`nome_comp`, `matricula` , `data_nas`, `parentesco`) VA
                         ('Laura Martins', 12, '2007-03-30', 'Filha'),
                         ('Miguel Costa', 13, '2009-12-05', 'Filho'),
                         ('Nina Rocha', 14, '2012-07-19', 'Filha');
-<<<<<<< HEAD
+
                         
-=======
+
 -- removemos a inserção dos valores de coluna data_hora, pois será inserido agora no trigger da transação         
->>>>>>> cb06de8be6f3d70be32e4abc01792f4843be4815
+
 INSERT INTO `transacao`(`conta_num_conta`, `tipo_transacao`, `valor`) VALUES 
                        (1, 'Pagamento', 500.00),
                        (2, 'Pagamento', 200.00),
