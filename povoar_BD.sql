@@ -55,13 +55,13 @@ INSERT INTO `conta`(`saldo`, `senha`, `tipo_conta`, `juros`, `limite_credito`, `
 				   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Poupança', 1.2, 2000.00, '2025-02-11', 2, 1),
 				   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Corrente', 2.1, 1500.00, '2025-03-10', 1, 3),
 				   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Poupança', 1.3, 2500.00, '2025-03-11', 2, 4),
-                   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Corrente', 2.0, 1200.00, '2025-03-12', 1, 5),
+                   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Especial', 2.0, 1200.00, '2025-03-12', 1, 5),
 				   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Poupança', 1.4, 1800.00, '2025-03-13', 2, 6),
                    (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Corrente', 2.2, 1600.00, '2025-03-14', 1, 7),
-                   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Poupança', 1.5, 3000.00, '2025-03-15', 2, 8),
+                   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Especial', 1.5, 3000.00, '2025-03-15', 2, 8),
 				   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Corrente', 2.3, 1400.00, '2025-03-16', 1, 9),
-                   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Poupança', 1.6, 2100.00, '2025-03-17', 2, 10),
-                   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Corrente', 2.4, 1900.00, '2025-03-18', 1, 11),
+                   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Especial', 1.6, 2100.00, '2025-03-17', 2, 10),
+                   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Especial', 2.4, 1900.00, '2025-03-18', 1, 11),
                    (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Poupança', 1.7, 2300.00, '2025-03-19', 2, 12),
 				   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Poupança', 1.7, 2300.00, '2025-03-19', 2, 3),
                    (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Corrente', 2.0, 1200.00, '2025-03-12', 1, 5);
@@ -143,23 +143,23 @@ INSERT INTO `dependente`(`nome_comp`, `matricula` , `data_nas`, `parentesco`) VA
                         ('Miguel Costa', 13, '2009-12-05', 'Filho'),
                         ('Nina Rocha', 14, '2012-07-19', 'Filha');
                         
-INSERT INTO `transacao`(`conta_num_conta`, `tipo_transacao`, `data_hora`, `valor`) VALUES 
-                       (1, 'Pagamento', '2025-03-20 10:00:00', 500.00),
-                       (2, 'Pagamento', '2025-03-20 11:00:00', 200.00),
-                       (3, 'Pagamento', '2025-03-20 12:00:00', 300.00),
-                       (4, 'Pagamento', '2025-03-20 13:00:00', 150.00),
-                       (5, 'Pagamento', '2025-03-20 14:00:00', 700.00),
-                       (6, 'Pagamento', '2025-03-20 15:00:00', 100.00),
-                       (7, 'Pagamento', '2025-03-20 16:00:00', 450.00),
-                       (8, 'Pagamento', '2025-03-20 17:00:00', 250.00),
-                       (9, 'Pagamento', '2025-03-20 18:00:00', 600.00),
-                       (10,'Pagamento', '2025-03-20 19:00:00', 300.00),
-                       (12, 'Pagamento', '2025-03-21 10:30:00', 550.00),
-                       (13, 'Pagamento', '2025-03-21 11:30:00', 220.00),
-					   (3, 'Pagamento', '2025-03-21 12:30:00', 330.00),
-                       (1, 'Pagamento', '2025-03-21 13:30:00', 180.00),
-                       (5, 'Pagamento', '2025-03-21 14:30:00', 770.00),
-                       (1, 'Saque', '2025-03-20 10:00:00', 100.00);
+INSERT INTO `transacao`(`conta_num_conta`, `tipo_transacao`, `valor`) VALUES 
+                       (1, 'Pagamento', 500.00),
+                       (2, 'Pagamento', 200.00),
+                       (3, 'Pagamento', 300.00),
+                       (4, 'Pagamento', 150.00),
+                       (5, 'Pagamento', 700.00),
+                       (6, 'Pagamento', 100.00),
+                       (7, 'Pagamento', 450.00),
+                       (8, 'Pagamento', 250.00),
+                       (9, 'Pagamento', 600.00),
+                       (10,'Pagamento', 300.00),
+                       (12, 'Pagamento', 550.00),
+                       (13, 'Pagamento', 220.00),
+					   (3, 'Pagamento', 330.00),
+                       (1, 'Pagamento', 180.00),
+                       (5, 'Pagamento', 770.00),
+                       (1, 'Saque', 100.00);
                      
 
 					
