@@ -49,7 +49,7 @@ INSERT INTO `funcionario`(`num_ag`, `nome_comp`, `senha`, `endereço`, `cidade`,
                          (15, 'Leonardo Costa', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua dos Pinheiros, 95', 'Curitiba', 'Caixa', 'Não-binário', '1993-11-02', 3100.00),
                          (16, 'Isabela Rocha', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Av. das Américas, 300', 'Florianópolis', 'Atendente', 'Não-binário', '1989-02-17', 2600.00),
                          (17, 'Gustavo Nunes', '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Rua do Comércio, 210', 'Recife', 'Caixa', 'Masculino', '1984-07-07', 3400.00);                     
-
+-- altera  uns tipos do atributo do tipo da conta para o tipo especial
 INSERT INTO `conta`(`saldo`, `senha`, `tipo_conta`, `juros`, `limite_credito`, `data_aniversario`, `gerente_matricula`, `agencia_num_ag`) VALUES 
 				   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Corrente', 2.5, 1000.00, '2025-02-10', 1, 1),
 				   (0, '$2b$10$EP2SJrnX9dPvhow6ILZLU.y3ygcGGqoM4NYxsP0r9QbGj1uCBPFfy', 'Poupança', 1.2, 2000.00, '2025-02-11', 2, 1),
@@ -142,7 +142,11 @@ INSERT INTO `dependente`(`nome_comp`, `matricula` , `data_nas`, `parentesco`) VA
                         ('Laura Martins', 12, '2007-03-30', 'Filha'),
                         ('Miguel Costa', 13, '2009-12-05', 'Filho'),
                         ('Nina Rocha', 14, '2012-07-19', 'Filha');
+<<<<<<< HEAD
                         
+=======
+-- removemos a inserção dos valores de coluna data_hora, pois será inserido agora no trigger da transação         
+>>>>>>> cb06de8be6f3d70be32e4abc01792f4843be4815
 INSERT INTO `transacao`(`conta_num_conta`, `tipo_transacao`, `valor`) VALUES 
                        (1, 'Pagamento', 500.00),
                        (2, 'Pagamento', 200.00),

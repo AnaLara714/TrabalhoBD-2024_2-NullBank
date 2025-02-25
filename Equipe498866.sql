@@ -177,7 +177,7 @@ ENGINE = InnoDB;
 -- Table `transacao`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `transacao` ;
-
+-- atualiza o tipo dos atributos de valor e data_hora para ficar melhor de utilizar o valor e a data_hora para pegar a data de quando for realizada
 CREATE TABLE IF NOT EXISTS `transacao` (
   `num_transacao` INT NOT NULL AUTO_INCREMENT,
   `conta_num_conta` INT NOT NULL,
@@ -190,6 +190,10 @@ CREATE TABLE IF NOT EXISTS `transacao` (
 ENGINE = InnoDB;
 
 USE `Equipe498866`;
+<<<<<<< HEAD
+=======
+-- remove os triggers do arquivo de criação do BD para realizar melhor modularização em um arquivo separado chamdo de consultas.sql
+>>>>>>> cb06de8be6f3d70be32e4abc01792f4843be4815
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
