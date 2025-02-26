@@ -277,7 +277,7 @@ FROM cliente_has_conta chc1
 JOIN cliente_has_conta chc2 ON chc1.conta_num_conta = chc2.conta_num_conta
 JOIN cliente c1 ON chc1.cliente_cpf = c1.cpf
 JOIN cliente c2 ON chc2.cliente_cpf = c2.cpf
-WHERE chc1.cliente_cpf = 'numero cpf'
+WHERE chc1.cliente_cpf = '12345678902'
   AND chc2.cliente_cpf <> chc1.cliente_cpf;
   
 -- 2.3 Quais as contas correntes deste cliente com maior número de transações na última semana 
@@ -288,7 +288,7 @@ SELECT t.conta_num_conta, COUNT(*) AS num_transacoes
 FROM transacao t
 JOIN conta c ON t.conta_num_conta = c.num_conta
 JOIN cliente_has_conta chc ON c.num_conta = chc.conta_num_conta
-WHERE chc.cliente_cpf = 'cpf cliente'
+WHERE chc.cliente_cpf = '12345678901'
   AND c.tipo_conta = 'Corrente'
   AND t.data_hora >= NOW() - INTERVAL 7 DAY
 GROUP BY t.conta_num_conta
@@ -299,7 +299,7 @@ SELECT t.conta_num_conta, COUNT(*) AS num_transacoes
 FROM transacao t
 JOIN conta c ON t.conta_num_conta = c.num_conta
 JOIN cliente_has_conta chc ON c.num_conta = chc.conta_num_conta
-WHERE chc.cliente_cpf = 'CPF_DO_CLIENTE' 
+WHERE chc.cliente_cpf = '12345678901' 
   AND c.tipo_conta = 'Corrente'
   AND t.data_hora >= NOW() - INTERVAL 30 DAY
 GROUP BY t.conta_num_conta
@@ -310,7 +310,7 @@ SELECT t.conta_num_conta, COUNT(*) AS num_transacoes
 FROM transacao t
 JOIN conta c ON t.conta_num_conta = c.num_conta
 JOIN cliente_has_conta chc ON c.num_conta = chc.conta_num_conta
-WHERE chc.cliente_cpf = 'CPF_DO_CLIENTE' 
+WHERE chc.cliente_cpf = '12345678901' 
   AND c.tipo_conta = 'Corrente'
   AND t.data_hora >= NOW() - INTERVAL 365 DAY
 GROUP BY t.conta_num_conta
@@ -348,7 +348,7 @@ SELECT
     a.nome_ag
 FROM funcionario f
 JOIN agencia a ON f.num_ag = a.num_ag
-WHERE a.cidade = 'Nome da Cidade'
+WHERE a.cidade = 'Belo Horizonte'
 GROUP BY a.num_ag, f.cargo, f.salario, f.nome_comp, f.endereço
 ORDER BY a.num_ag, f.cargo, f.salario;
 
@@ -360,7 +360,7 @@ SELECT
     SUM(f.salario) AS salario_montante_total
 FROM funcionario f
 JOIN agencia a ON f.num_ag = a.num_ag
-WHERE a.cidade = 'Nome da Cidade'
+WHERE a.cidade = 'São Paulo'
 GROUP BY a.num_ag
 ORDER BY salario_montante_total DESC;
 
@@ -437,10 +437,10 @@ BEGIN
 
         -- Registra a transação na tabela transacao
         INSERT INTO transacao (conta_num_conta, tipo_transacao, data_hora, valor)
-        VALUES (p_conta_origem, 'Transferencia', NOW(), p_valor);
+        VALUES (p_conta_origem, 'Transferência', NOW(), p_valor);
 
         INSERT INTO transacao (conta_num_conta, tipo_transacao, data_hora, valor)
-        VALUES (p_conta_destino, 'Transferencia', NOW(), p_valor);
+        VALUES (p_conta_destino, 'Depósito', NOW(), p_valor);
     END IF;
 
     -- Confirma a transação
@@ -450,7 +450,6 @@ END$$
 -- teste (conta origem, conta destino, valor)
 
 CALL realizar_transferencia(5, 2, 200.00);
-
 
 
 
